@@ -4,7 +4,7 @@ from tkinter import Tk, filedialog
 
 
 
-# image picking
+# image picking-Leshawn
 print("select an image")
 Tk().withdraw()
 file_path = filedialog.askopenfilename(
@@ -18,6 +18,7 @@ if not file_path:
 # load image
 img = cv2.imread(file_path)
 rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+#leshawn
 
 
 
@@ -92,6 +93,10 @@ mask2 = cv2.inRange(HSV, lower_red2, upper_red2)
 masks = mask1 + mask2
 
 cv2.imshow("masks", masks)
+#contours
+contours, hierarchy = cv2.findContours(thresh, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_NONE)
+cv2.drawContours(img, contours, -1, (255,0,0), 2)
+cv2.imshow("Contours", img)
 
 
 
