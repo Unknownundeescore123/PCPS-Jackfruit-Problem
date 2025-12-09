@@ -102,4 +102,5 @@ cv2.imshow("Contours", img)
 
 # remove pop-up windows by pressing any key
 cv2.waitKey(0)
+
 cv2.destroyAllWindows()
